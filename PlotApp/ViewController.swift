@@ -12,11 +12,13 @@ class ViewController: UIViewController {
 
     let viewModel: ViewModel = ViewModel()
 
+    @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var chartView: ScatterChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        iconImage.image = UIImage(systemName: "tree")
         if let data = viewModel.loadChartView() {
             chartView.data = data
             viewModel.format(chartView)

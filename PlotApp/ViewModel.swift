@@ -54,8 +54,12 @@ class ViewModel {
 
             for (syndromeName, chartDataEntry) in datasets {
                 let scatterChartDataset = ScatterChartDataSet(entries: chartDataEntry, label: syndromeName)
-                scatterChartDataset.setScatterShape(.circle)
-                scatterChartDataset.colors = [colors[colorIndex]]
+                if syndromeName == "Patient" {
+                    scatterChartDataset.setScatterShape(.triangle)
+                } else {
+                    scatterChartDataset.setScatterShape(.circle)
+                }
+                scatterChartDataset.colors = [colors[colorIndex].withAlphaComponent(0.40)]
                 scatterChartDatasets.append(scatterChartDataset)
                 colorIndex += 1
 
@@ -76,7 +80,7 @@ class ViewModel {
     }
 
     private func formatLeftAxis(leftAxis: YAxis) {
-        leftAxis.axisMinimum = 0
+//        leftAxis.axisMinimum = 0
     }
 
     private func formatRightAxis(rightAxis: YAxis) {
