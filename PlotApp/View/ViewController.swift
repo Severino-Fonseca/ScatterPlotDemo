@@ -54,9 +54,6 @@ extension ViewController: ChartViewDelegate {
 
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         guard let dataset = chartView.data?.dataSets[highlight.dataSetIndex] else { return }
-        let entryIndex = dataset.entryIndex(entry: entry)
-        //        guard let datasets = viewModel.datasets else { return }
-        //        guard let dataset = datasets.dataSets[safe: entryIndex] else { return }
 
         customMarkerView.label.text = dataset.label
     }

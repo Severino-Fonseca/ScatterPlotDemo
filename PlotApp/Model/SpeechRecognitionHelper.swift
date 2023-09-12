@@ -34,7 +34,7 @@ open class SpeechRecognitionHelper: NSObject {
         }
 
         delegate?.recognitionLoading()
-        speechRecognizer = SFSpeechRecognizer()
+        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
 
         guard speechRecognizer != nil else {
             delegate?.recognitionUnavailableForLocale()

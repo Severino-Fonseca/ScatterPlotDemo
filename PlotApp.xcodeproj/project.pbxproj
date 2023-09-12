@@ -24,6 +24,7 @@
 		90C2E0F12AA669FB002D7E0E /* SpeechRecognitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E0F02AA669FB002D7E0E /* SpeechRecognitionButton.swift */; };
 		90C2E0F32AA66BAB002D7E0E /* SpeechRecognitionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E0F22AA66BAB002D7E0E /* SpeechRecognitionHelper.swift */; };
 		90D6CA0E2AA25E6F00DB21AD /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D6CA0D2AA25E6F00DB21AD /* CustomMarkerView.swift */; };
+		90F538542AB0BCA1008D1266 /* CustomMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F538532AB0BCA1008D1266 /* CustomMarkerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		90C2E0F02AA669FB002D7E0E /* SpeechRecognitionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognitionButton.swift; path = Pods/SpeechRecognitionButton.swift; sourceTree = SOURCE_ROOT; };
 		90C2E0F22AA66BAB002D7E0E /* SpeechRecognitionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionHelper.swift; sourceTree = "<group>"; };
 		90D6CA0D2AA25E6F00DB21AD /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
+		90F538532AB0BCA1008D1266 /* CustomMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomMarkerView.xib; path = View/CustomMarkerView.xib; sourceTree = "<group>"; };
 		DFAC455E769CDC79614BA1C0 /* Pods_PlotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				901659702A8D12E100842F33 /* AppDelegate.swift */,
 				901659722A8D12E100842F33 /* SceneDelegate.swift */,
 				9099AAF62A90290B00F2D4CC /* AppUtility.swift */,
+				90F538532AB0BCA1008D1266 /* CustomMarkerView.xib */,
 				901659762A8D12E100842F33 /* Main.storyboard */,
 				901659792A8D12E300842F33 /* Assets.xcassets */,
 				9016597B2A8D12E300842F33 /* LaunchScreen.storyboard */,
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9016597D2A8D12E300842F33 /* LaunchScreen.storyboard in Resources */,
+				90F538542AB0BCA1008D1266 /* CustomMarkerView.xib in Resources */,
 				901659872A8D1A4700842F33 /* sample-tsne.json in Resources */,
 				9016597A2A8D12E300842F33 /* Assets.xcassets in Resources */,
 				901659782A8D12E100842F33 /* Main.storyboard in Resources */,
