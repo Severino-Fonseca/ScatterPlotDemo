@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import DGCharts
 
 struct DataPoint: Codable {
     let imageID: String
@@ -14,6 +16,10 @@ struct DataPoint: Codable {
     let x: String
     let field1: Int
     let syndromeID: String
+
+    func toChartDataEntry() -> ChartDataEntry {
+        ChartDataEntry(x: Double(x) ?? 0.0, y: Double(y) ?? 0.0)
+    }
 
     enum CodingKeys: String, CodingKey {
         case imageID = "Image_ID"
@@ -24,6 +30,3 @@ struct DataPoint: Codable {
         case syndromeID = "Syndrome_ID"
     }
 }
-
-
-

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		258A7C61044E638FF1A964E9 /* Pods_PlotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAC455E769CDC79614BA1C0 /* Pods_PlotApp.framework */; };
+		900B27592A950956008FDC68 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900B27582A950956008FDC68 /* DataSet.swift */; };
 		901659712A8D12E100842F33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901659702A8D12E100842F33 /* AppDelegate.swift */; };
 		901659732A8D12E100842F33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901659722A8D12E100842F33 /* SceneDelegate.swift */; };
 		901659752A8D12E100842F33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901659742A8D12E100842F33 /* ViewController.swift */; };
@@ -18,11 +19,17 @@
 		901659872A8D1A4700842F33 /* sample-tsne.json in Resources */ = {isa = PBXBuildFile; fileRef = 901659862A8D1A4700842F33 /* sample-tsne.json */; };
 		9099AAF52A9028DE00F2D4CC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099AAF42A9028DE00F2D4CC /* ViewModel.swift */; };
 		9099AAF72A90290B00F2D4CC /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099AAF62A90290B00F2D4CC /* AppUtility.swift */; };
+		90C2E0EB2AA65EAF002D7E0E /* TranscribingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E0EA2AA65EAF002D7E0E /* TranscribingViewModel.swift */; };
+		90C2E0EF2AA663BE002D7E0E /* TranscribingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E0EE2AA663BE002D7E0E /* TranscribingViewController.swift */; };
+		90C2E0F12AA669FB002D7E0E /* SpeechRecognitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E0F02AA669FB002D7E0E /* SpeechRecognitionButton.swift */; };
+		90C2E0F32AA66BAB002D7E0E /* SpeechRecognitionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E0F22AA66BAB002D7E0E /* SpeechRecognitionHelper.swift */; };
+		90D6CA0E2AA25E6F00DB21AD /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D6CA0D2AA25E6F00DB21AD /* CustomMarkerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63AC633C5B31FB605D1B2491 /* Pods-PlotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlotApp.debug.xcconfig"; path = "Target Support Files/Pods-PlotApp/Pods-PlotApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8A7819A5E46B002CFE1EA416 /* Pods-PlotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlotApp.release.xcconfig"; path = "Target Support Files/Pods-PlotApp/Pods-PlotApp.release.xcconfig"; sourceTree = "<group>"; };
+		900B27582A950956008FDC68 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		9016596D2A8D12E100842F33 /* PlotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		901659702A8D12E100842F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		901659722A8D12E100842F33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +42,11 @@
 		901659862A8D1A4700842F33 /* sample-tsne.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sample-tsne.json"; sourceTree = "<group>"; };
 		9099AAF42A9028DE00F2D4CC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9099AAF62A90290B00F2D4CC /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
+		90C2E0EA2AA65EAF002D7E0E /* TranscribingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TranscribingViewModel.swift; path = PlotApp/Model/TranscribingViewModel.swift; sourceTree = SOURCE_ROOT; };
+		90C2E0EE2AA663BE002D7E0E /* TranscribingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribingViewController.swift; sourceTree = "<group>"; };
+		90C2E0F02AA669FB002D7E0E /* SpeechRecognitionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognitionButton.swift; path = Pods/SpeechRecognitionButton.swift; sourceTree = SOURCE_ROOT; };
+		90C2E0F22AA66BAB002D7E0E /* SpeechRecognitionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionHelper.swift; sourceTree = "<group>"; };
+		90D6CA0D2AA25E6F00DB21AD /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
 		DFAC455E769CDC79614BA1C0 /* Pods_PlotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,6 +62,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		900B275A2A95095C008FDC68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90C2E0F22AA66BAB002D7E0E /* SpeechRecognitionHelper.swift */,
+				901659842A8D163200842F33 /* DataPoint.swift */,
+				900B27582A950956008FDC68 /* DataSet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		900B275B2A95096D008FDC68 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90C2E0EA2AA65EAF002D7E0E /* TranscribingViewModel.swift */,
+				9099AAF42A9028DE00F2D4CC /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		900B275C2A95097F008FDC68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90C2E0F02AA669FB002D7E0E /* SpeechRecognitionButton.swift */,
+				90C2E0EE2AA663BE002D7E0E /* TranscribingViewController.swift */,
+				90D6CA0D2AA25E6F00DB21AD /* CustomMarkerView.swift */,
+				901659742A8D12E100842F33 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		901659642A8D12E100842F33 = {
 			isa = PBXGroup;
 			children = (
@@ -71,13 +113,13 @@
 		9016596F2A8D12E100842F33 /* PlotApp */ = {
 			isa = PBXGroup;
 			children = (
+				900B275C2A95097F008FDC68 /* View */,
+				900B275B2A95096D008FDC68 /* ViewModel */,
+				900B275A2A95095C008FDC68 /* Model */,
 				901659862A8D1A4700842F33 /* sample-tsne.json */,
 				901659702A8D12E100842F33 /* AppDelegate.swift */,
 				901659722A8D12E100842F33 /* SceneDelegate.swift */,
-				901659742A8D12E100842F33 /* ViewController.swift */,
 				9099AAF62A90290B00F2D4CC /* AppUtility.swift */,
-				9099AAF42A9028DE00F2D4CC /* ViewModel.swift */,
-				901659842A8D163200842F33 /* DataPoint.swift */,
 				901659762A8D12E100842F33 /* Main.storyboard */,
 				901659792A8D12E300842F33 /* Assets.xcassets */,
 				9016597B2A8D12E300842F33 /* LaunchScreen.storyboard */,
@@ -219,12 +261,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C2E0EF2AA663BE002D7E0E /* TranscribingViewController.swift in Sources */,
+				90C2E0EB2AA65EAF002D7E0E /* TranscribingViewModel.swift in Sources */,
 				9099AAF52A9028DE00F2D4CC /* ViewModel.swift in Sources */,
 				901659752A8D12E100842F33 /* ViewController.swift in Sources */,
+				90D6CA0E2AA25E6F00DB21AD /* CustomMarkerView.swift in Sources */,
 				9099AAF72A90290B00F2D4CC /* AppUtility.swift in Sources */,
 				901659712A8D12E100842F33 /* AppDelegate.swift in Sources */,
 				901659732A8D12E100842F33 /* SceneDelegate.swift in Sources */,
+				900B27592A950956008FDC68 /* DataSet.swift in Sources */,
 				901659852A8D163200842F33 /* DataPoint.swift in Sources */,
+				90C2E0F12AA669FB002D7E0E /* SpeechRecognitionButton.swift in Sources */,
+				90C2E0F32AA66BAB002D7E0E /* SpeechRecognitionHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +423,8 @@
 				DEVELOPMENT_TEAM = 5YN45F5472;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlotApp/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded for transcription. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription in the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -404,6 +454,8 @@
 				DEVELOPMENT_TEAM = 5YN45F5472;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlotApp/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded for transcription. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription in the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

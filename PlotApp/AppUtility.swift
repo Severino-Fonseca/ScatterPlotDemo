@@ -26,26 +26,54 @@ struct AppUtility {
         UINavigationController.attemptRotationToDeviceOrientation()
     }
 
-    static func generatePastelColor(withColor color: UIColor?) -> UIColor {
-        let randomColorGenerator = { ()-> CGFloat in
-            CGFloat(arc4random() % 256 ) / 256
+}
+
+enum SyndromeColor: String {
+    case fragileXSyndromeFXS = "Fragile X Syndrome; FXS"
+    case cherubism = "Cherubism"
+    case osteosclerosis = "Osteosclerosis"
+    case chudleyMcculloughSyndromeCMCS = "Chudley-Mccullough Syndrome; CMCS"
+    case fetalAlcoholSyndromeFAS = "Fetal Alcohol Syndrome; FAS"
+    case leighSyndromeLS = "Leigh Syndrome; LS"
+    case chromosome16q22Deletion = "Chromosome 16q22 Deletion Syndrome"
+    case chromosome15g133Deletion = "Chromosome 15q13.3 Deletion Syndrome"
+    case Microdeletion6q2233Syndrome = "6q22.33 Microdeletion Syndrome"
+    case roifmanSyndromeRFMN = "Roifman Syndrome; RFMN"
+    case ichthyosisVulgaris = "Ichthyosis Vulgaris"
+    // Add more cases for other syndromes...
+
+    var color: UIColor {
+        switch self {
+        case .fragileXSyndromeFXS:
+            return UIColor(red: 40/255, green: 120/255, blue: 180/255, alpha: 0.5)
+        case .cherubism:
+            return UIColor(red: 250/255, green: 130/255, blue: 40/255, alpha: 0.5)
+        // Set colors for other syndromes...
+        case .osteosclerosis:
+            return UIColor(red: 50/255, green: 160/255, blue: 50/255, alpha: 0.5)
+        case .chudleyMcculloughSyndromeCMCS:
+            return UIColor(red: 210/255, green: 55/255, blue: 60/255, alpha: 0.5)
+        case .fetalAlcoholSyndromeFAS:
+            return UIColor(red: 150/255, green: 100/255, blue: 190/255, alpha: 0.5)
+        case .leighSyndromeLS:
+            return UIColor(red: 140/255, green: 90/255, blue: 80/255, alpha: 0.5)
+        case .chromosome16q22Deletion:
+            return UIColor(red: 225/255, green: 120/255, blue: 190/255, alpha: 0.5)
+        case .chromosome15g133Deletion:
+            return UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 0.5)
+        case .Microdeletion6q2233Syndrome:
+            return UIColor(red: 188/255, green: 188/255, blue: 52/255, alpha: 0.5)
+        case .roifmanSyndromeRFMN:
+            return UIColor(red: 40/255, green: 190/255, blue: 205/255, alpha: 0.5)
+        case .ichthyosisVulgaris:
+            return UIColor(red: 30/255, green: 100/255, blue: 170/255, alpha: 0.5)
         }
-
-        var red: CGFloat = randomColorGenerator()
-        var green: CGFloat = randomColorGenerator()
-        var blue: CGFloat = randomColorGenerator()
-
-        // Mix the color
-        if let mixColor = color {
-            var mixRed: CGFloat = 0, mixGreen: CGFloat = 0, mixBlue: CGFloat = 0;
-            mixColor.getRed(&mixRed, green: &mixGreen, blue: &mixBlue, alpha: nil)
-
-            red = (red + mixRed) / 2;
-            green = (green + mixGreen) / 2;
-            blue = (blue + mixBlue) / 2;
-        }
-
-        return UIColor(red: red, green: green, blue: blue, alpha: 0.50)
     }
+}
 
+extension Collection {
+
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
 }

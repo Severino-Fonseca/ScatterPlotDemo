@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="landscape" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G10-rM-rr6">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cr3-ip-5XO" customClass="ScatterChartView" customModule="DGCharts">
-                                <rect key="frame" x="20" y="47" width="886" height="347"/>
+                                <rect key="frame" x="20" y="47" width="388" height="845"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FgV-w0-QIH">
                                         <rect key="frame" x="8" y="277" width="60" height="70"/>
@@ -45,8 +45,70 @@
             </objects>
             <point key="canvasLocation" x="20.422535211267608" y="2.2900763358778624"/>
         </scene>
+        <!--Trancribing View Controller-->
+        <scene sceneID="NY3-hD-9Sn">
+            <objects>
+                <viewController id="G10-rM-rr6" customClass="TrancribingViewController" customModule="PlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YmV-e8-CWI">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-9b-Q2f">
+                                <rect key="frame" x="20" y="47" width="388" height="787"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxW-Oc-UFo" customClass="SpeechRecognitionButton" customModule="PlotApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="842" width="388" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start Recognition">
+                                    <color key="titleColor" systemColor="secondaryLabelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="recognitionButtonTapped:" destination="G10-rM-rr6" eventType="touchUpInside" id="XHh-mZ-6cf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LVG-Po-WZN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7RG-9b-Q2f" firstAttribute="leading" secondItem="cxW-Oc-UFo" secondAttribute="leading" id="6Aw-oj-xR5"/>
+                            <constraint firstItem="LVG-Po-WZN" firstAttribute="bottom" secondItem="cxW-Oc-UFo" secondAttribute="bottom" constant="11" id="8fo-Mf-l1p"/>
+                            <constraint firstItem="7RG-9b-Q2f" firstAttribute="leading" secondItem="YmV-e8-CWI" secondAttribute="leadingMargin" id="D3w-aA-9Xq"/>
+                            <constraint firstItem="7RG-9b-Q2f" firstAttribute="trailing" secondItem="cxW-Oc-UFo" secondAttribute="trailing" id="U7k-Mn-QRp"/>
+                            <constraint firstItem="7RG-9b-Q2f" firstAttribute="trailing" secondItem="YmV-e8-CWI" secondAttribute="trailingMargin" id="XJm-k4-3Fp"/>
+                            <constraint firstItem="cxW-Oc-UFo" firstAttribute="top" secondItem="7RG-9b-Q2f" secondAttribute="bottom" constant="8" id="kUS-6C-QvT"/>
+                            <constraint firstItem="7RG-9b-Q2f" firstAttribute="top" secondItem="LVG-Po-WZN" secondAttribute="top" id="o6x-dI-3Ak"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recognitionButton" destination="cxW-Oc-UFo" id="O98-hX-OGO"/>
+                        <outlet property="textView" destination="7RG-9b-Q2f" id="1ZN-mm-1nx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ygd-8h-78P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="r9x-tv-JKn" customClass="SpeechRecognitionButton" customModule="PlotApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="Start Recognition"/>
+                </button>
+            </objects>
+            <point key="canvasLocation" x="19.626168224299064" y="829.37365010799147"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
