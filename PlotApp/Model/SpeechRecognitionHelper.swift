@@ -29,30 +29,29 @@ open class SpeechRecognitionHelper: NSObject {
     public var delegate: SpeechRecognitionProtocol?
 
     public func initialize() {
-        guard delegate != nil else {
-            fatalError()
+        guard let delegate = delegate else {
+            fatalError("Delegate is not set")
         }
 
-        delegate?.recognitionLoading()
+        delegate.recognitionLoading()
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
 
-        guard speechRecognizer != nil else {
-            delegate?.recognitionUnavailableForLocale()
+        guard let speechRecognizer = speechRecognizer else {
+            delegate.recognitionUnavailableForLocale()
             return
         }
 
-        guard speechRecognizer!.isAvailable else {
-            delegate?.recognitionTemporarilyUnavailable()
+        guard speechRecognizer.isAvailable else {
+            delegate.recognitionTemporarilyUnavailable()
             return
         }
 
-        speechRecognizer!.delegate = self
+        speechRecognizer.delegate = self
 
         SFSpeechRecognizer.requestAuthorization { authStatus in
-
             DispatchQueue.main.async {
-                self.delegate?.recognition(isAuthorized: authStatus == .authorized)
-                self.delegate?.recognition(isReady: authStatus == .authorized)
+                delegate.recognition(isAuthorized: authStatus == .authorized)
+                delegate.recognition(isReady: authStatus == .authorized)
             }
         }
     }
@@ -63,7 +62,11 @@ open class SpeechRecognitionHelper: NSObject {
             delegate?.recognitionLoading()
             stopRecognition()
         } else {
-            try! startDictation()
+            do {
+                try startDictation()
+            } catch {
+                print("Error starting dictation: \(error)")
+            }
         }
     }
 
@@ -73,24 +76,29 @@ open class SpeechRecognitionHelper: NSObject {
     }
 
     fileprivate func startDictation() throws {
-        guard speechRecognizer != nil else { return }
+        guard let speechRecognizer = speechRecognizer else { return }
 
         // Stop the previous task if it's running.
         stopRecognition()
         delegate?.recognitionLoading()
 
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        do {
+            try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("Error setting audio session: \(error)")
+            return
+        }
 
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        guard recognitionRequest != nil else { return }
+        guard let recognitionRequest = recognitionRequest else { return }
 
-        recognitionRequest!.shouldReportPartialResults = true  // Results are returned before audio recording is finished
+        recognitionRequest.shouldReportPartialResults = true  // Results are returned before audio recording is finished
 
         // New for iOS 13. Keep speech recognition data on device if possible (if it's supported)
         if #available(iOS 13, *) {
-            recognitionRequest!.requiresOnDeviceRecognition = speechRecognizer!.supportsOnDeviceRecognition
+            recognitionRequest.requiresOnDeviceRecognition = speechRecognizer.supportsOnDeviceRecognition
         }
 
         // Configure the microphone input
@@ -99,20 +107,25 @@ open class SpeechRecognitionHelper: NSObject {
             self.recognitionRequest?.append(buffer)
         }
 
-        recognitionTask = speechRecognizer!.recognitionTask(with: recognitionRequest!) { [unowned self] result, error in
-
-            if error != nil {
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [unowned self] result, error in
+            if let error = error {
+                print("Recognition error: \(error)")
                 self.stopRecognition()
-                delegate?.recognitionFinished()
+                self.delegate?.recognitionFinished()
             }
-            if let r = result {
-                self.delegate?.recognitionTextUpdate(text: r.bestTranscription.formattedString, isFinal: r.isFinal)
-                delegate?.recognitionFinished()
+
+            if let result = result {
+                self.delegate?.recognitionTextUpdate(text: result.bestTranscription.formattedString, isFinal: result.isFinal)
+                self.delegate?.recognitionFinished()
             }
         }
 
         audioEngine.prepare()
-        try audioEngine.start()
+        do {
+            try audioEngine.start()
+        } catch {
+            print("Error starting audio engine: \(error)")
+        }
 
         delegate?.recognitionStarted()
     }
@@ -133,6 +146,13 @@ open class SpeechRecognitionHelper: NSObject {
 
         recognitionRequest = nil
         recognitionTask = nil
+
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("Error deactivating audio session: \(error)")
+        }
     }
 }
 
@@ -144,4 +164,3 @@ extension SpeechRecognitionHelper: SFSpeechRecognizerDelegate {
         delegate?.recognition(isReady: available)
     }
 }
-
